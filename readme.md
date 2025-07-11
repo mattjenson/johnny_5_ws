@@ -7,10 +7,10 @@ Complete ROS 2 (Jazzy) workspace for the Johnny 5 hobby robot, including URDF/Xa
 ```
 johnny_5_ws/                    # Complete ROS2 workspace
 ├── readme.md                   # This file
-├── meshes/                     # STL/DAE files (empty for now)
 ├── src/
 │   └── johnny_5_description/   # Robot description package
 │       ├── urdf/               # johnny_5.xacro
+│       ├── meshes/             # STL/DAE files (empty for now)
 │       ├── launch/             # view_robot.launch.py
 │       ├── include/            # C++ headers (empty)
 │       ├── src/                # C++ source (empty)
