@@ -1,6 +1,24 @@
 # Johnny 5 ROS2 Workspace
+## Quick Start
 
-Complete ROS 2 (Jazzy) workspace for the Johnny 5 hobby robot, including URDF/Xacro model, launch files, and helper scripts.
+```bash
+# Clone the complete workspace
+cd ~
+git clone https://github.com/mattjenson/johnny_5_ws.git
+cd johnny_5_ws
+
+# Build the workspace
+colcon build
+source install/setup.bash
+
+# Desktop run (has DISPLAY)
+ros2 launch johnny_5_description view_robot.launch.py
+
+# Headless / SSH run (no DISPLAY)
+DISPLAY= ros2 launch johnny_5_description view_robot.launch.py
+```(Jazzy) workspace for the Johnny 5 hobby robot, including URDF/Xacro model, launch files, and helper scripts.nny 5 Description
+
+URDF/Xacro model, launch files, and helper scripts for the Johnny 5 ROS 2 (Jazzy) hobby robot.
 
 ## Workspace Layout
 
@@ -22,73 +40,75 @@ johnny_5_ws/                    # Complete ROS2 workspace
 └── log/                        # Build logs
 ```
 
-## Quick Start
+Quick start
 
-```bash
-# Clone the complete workspace
-cd ~
-git clone https://github.com/mattjenson/johnny_5_ws.git
-cd johnny_5_ws
+# Clone into a ROS 2 Jazzy workspace
+cd ~/johnny_ws/src
+git clone https://github.com/<your‑github‑user>/johnny_5_description.git
 
-# Build the workspace
-colcon build
+# Build just this package
+cd ~/johnny_ws
+colcon build --packages-select johnny_5_description
 source install/setup.bash
 
 # Desktop run (has DISPLAY)
 ros2 launch johnny_5_description view_robot.launch.py
 
 # Headless / SSH run (no DISPLAY)
-DISPLAY= ros2 launch johnny_5_description view_robot.launch.py
-```
+DISPLAY=  ros2 launch johnny_5_description view_robot.launch.py
 
-## Runtime Dependencies
 
-| Package | Purpose |
-|---------|---------|
-| `robot_state_publisher` | Publishes TF tree from URDF |
-| `xacro` | Converts Xacro → URDF at launch time |
-| `joint_state_publisher_gui` | Slider GUI for joint testing (desktop) |
-| `joint_state_publisher` | CLI fallback for headless targets |
-| `rviz2` | Visualization |
-| `launch`, `launch_ros` | Python launch framework |
+⸻
+
+Runtime dependencies
+
+Package	Purpose
+robot_state_publisher	Publishes TF tree from URDF
+xacro	Converts Xacro → URDF at launch time
+joint_state_publisher_gui	Slider GUI for joint testing (desktop)
+joint_state_publisher	CLI fallback for headless targets
+rviz2	Visualisation
+launch, launch_ros	Python launch framework
 
 Install via apt:
 
-```bash
 sudo apt update && \
   sudo apt install ros-jazzy-robot-state-publisher \
-                   ros-jazzy-xacro \
-                   ros-jazzy-joint-state-publisher-gui \
-                   ros-jazzy-joint-state-publisher \
-                   ros-jazzy-rviz2
-```
+                     ros-jazzy-xacro \
+                     ros-jazzy-joint-state-publisher-gui \
+                     ros-jazzy-joint-state-publisher \
+                     ros-jazzy-rviz2
 
-## Display-aware Launch Behavior
 
-- **If `$DISPLAY` is set**, `view_robot.launch.py` starts:
-  - `joint_state_publisher_gui` (sliders)
-  - `rviz2` with the robot model
-- **If no display is detected** (e.g. SSH to the robot), it automatically falls back to:
-  - `joint_state_publisher` (CLI)
-  - No RViz, preventing Qt/X11 crashes
+⸻
 
-## Feature Status
+Display‑aware launch behaviour
+	•	If $DISPLAY is set, view_robot.launch.py starts:
+	•	joint_state_publisher_gui (sliders)
+	•	rviz2 with the robot model
+	•	If no display is detected (e.g. SSH to the robot), it automatically falls back to:
+	•	joint_state_publisher (CLI)
+	•	No RViz, preventing Qt/X11 crashes
 
-| Feature | Status |
-|---------|--------|
-| Xacro skeleton loads in RViz | ✅ Working |
-| GUI ⇄ CLI joint publisher fallback | ✅ Working |
-| Visual & collision meshes | 🚧 Not added yet |
-| Joint limits & dynamics | 🚧 WIP |
-| Unit tests (pytest/launch) | ❌ Not started |
+⸻
+
+Feature status
+
+Feature	Status
+Xacro skeleton loads in RViz	✅ Working
+GUI ⇄ CLI joint publisher fallback	✅ Working
+Visual & collision meshes	🚧 Not added yet
+Joint limits & dynamics	🚧 WIP
+Unit tests (pytest/launch)	❌ Not started
 
 Feel free to open PRs or issues as you contribute!
 
-## Roadmap / Planned Package Structure
+⸻
 
-Below is the high-level directory and package plan we'll follow as the project grows. Each bullet will become its own package (or group of packages) when we reach that stage.
+Roadmap / Planned Package Structure
 
-```
+Below is the high-level directory and package plan we’ll follow as the project grows.  Each bullet will become its own package (or group of packages) when we reach that stage.
+
 johnny_5_description/          # URDF/Xacro, meshes, SRDF
 johnny_5_interfaces/           # custom msg/srv/action definitions
 
@@ -124,10 +144,11 @@ johnny_5_tests/                # System & integration tests
 # (optional) Unit-specific calibration
 johnny_5_1_calibration/        # Camera intrinsics, IMU offsets
 johnny_5_1_bringup/            # Thin launch pointing to *_calibration
-```
 
-**Status**: we're currently focused on `johnny_5_description`. As each milestone above is tackled we'll create a new package, document its purpose in this README, and update the roadmap table.
+Status: we’re currently focused on johnny_5_description.  As each milestone above is tackled we’ll create a new package, document its purpose in this README, and update the roadmap table.
 
-## License
+⸻
 
-Licensed under the Apache License 2.0. See LICENSE for details.
+License
+
+Licensed under the Apache License 2.0. See LICENSE for details.
