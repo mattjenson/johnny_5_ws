@@ -1,0 +1,12 @@
+source;share/johnny_5_base_hw/hook/path.ps1
+source;share/johnny_5_base_hw/hook/path.dsv
+source;share/johnny_5_base_hw/hook/path.sh
+source;share/johnny_5_base_hw/hook/pythonpath.ps1
+source;share/johnny_5_base_hw/hook/pythonpath.dsv
+source;share/johnny_5_base_hw/hook/pythonpath.sh
+source;share/johnny_5_base_hw/hook/pythonscriptspath.ps1
+source;share/johnny_5_base_hw/hook/pythonscriptspath.dsv
+source;share/johnny_5_base_hw/hook/pythonscriptspath.sh
+source;share/johnny_5_base_hw/hook/ament_prefix_path.ps1
+source;share/johnny_5_base_hw/hook/ament_prefix_path.dsv
+source;share/johnny_5_base_hw/hook/ament_prefix_path.sh

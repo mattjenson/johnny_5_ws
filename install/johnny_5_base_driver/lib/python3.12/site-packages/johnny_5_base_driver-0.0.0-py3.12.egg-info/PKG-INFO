@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: johnny-5-base-driver
+Version: 0.0.0
+Summary: Python motor driver for Johnny 5 tracked base
+Maintainer: matt
+Maintainer-email: matt.jenson@gmail.com
+License: Apache-2.0
+License-File: LICENSE

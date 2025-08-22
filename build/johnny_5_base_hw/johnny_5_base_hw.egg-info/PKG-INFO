@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: johnny-5-base-hw
+Version: 0.0.0
+Summary: Hardware interface for Johnny 5 tracked base drive system
+Maintainer: matt
+Maintainer-email: matt.jenson@gmail.com
+License: Apache-2.0

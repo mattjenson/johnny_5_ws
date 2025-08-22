@@ -78,6 +78,7 @@ sudo apt update && \
 |---------|--------|
 | Xacro skeleton loads in RViz | ✅ Working |
 | GUI ⇄ CLI joint publisher fallback | ✅ Working |
+| Tracked base hardware interface | ✅ Working |
 | Visual & collision meshes | 🚧 Not added yet |
 | Joint limits & dynamics | 🚧 WIP |
 | Unit tests (pytest/launch) | ❌ Not started |

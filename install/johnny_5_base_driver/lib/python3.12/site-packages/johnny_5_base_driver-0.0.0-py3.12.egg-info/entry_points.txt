@@ -1,0 +1,2 @@
+[console_scripts]
+base_driver = johnny_5_base_driver.base_driver:main

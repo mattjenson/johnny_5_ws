@@ -1,0 +1,3 @@
+lgpio
+rclpy
+setuptools

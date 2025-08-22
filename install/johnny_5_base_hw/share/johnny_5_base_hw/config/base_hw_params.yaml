@@ -1,0 +1,18 @@
+# Johnny 5 Base Hardware Configuration
+
+base_controller:
+  ros__parameters:
+    wheel_separation: 0.35      # Distance between track centers (m)
+    wheel_radius: 0.05          # Effective wheel radius (m)
+    max_linear_speed: 1.0       # Maximum forward speed (m/s)
+    max_angular_speed: 2.0      # Maximum rotation speed (rad/s)
+    motor_max_rpm: 100.0        # Maximum motor RPM
+
+odometry_publisher:
+  ros__parameters:
+    wheel_separation: 0.35      # Distance between track centers (m)
+    wheel_radius: 0.05          # Effective wheel radius (m)
+    motor_max_rpm: 100.0        # Maximum motor RPM
+    publish_tf: true            # Publish odom->base_link transform
+    odom_frame: "odom"          # Odometry frame name
+    base_frame: "base_link"     # Robot base frame name
